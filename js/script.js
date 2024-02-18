@@ -1,6 +1,6 @@
 var smapiKey = "6OP4TY35"; // smapi nyckeln
-var lat1 = 56.843834;
-var lan1 = 14.807560;
+//var lat1 = 56.843834;
+//var lan1 = 14.807560;
 var lat //användarens lat
 var lon; //användarens lng 
 var keyWords; // en arrye med alla kategori knappar
@@ -42,11 +42,11 @@ function getCtgrys(kW) {
   loadingMessage();
   let request = new XMLHttpRequest(); // object för Ajax-anropet
   if (kW === "vegetarian_option") {
-    request.open("GET", "https://smapi.lnu.se/api/?api_key=" + smapiKey + "&debug=false&controller=food&method=getfromlatlng&lat=" + lat1 + "&lng=" + lan1 + "&" + kW + "=Y&order_by=distance_in_km&sort_in=ASC", true);
+    request.open("GET", "https://smapi.lnu.se/api/?api_key=" + smapiKey + "&debug=false&controller=food&method=getfromlatlng&lat=" + lat + "&lng=" + lon + "&" + kW + "=Y&order_by=distance_in_km&sort_in=ASC", true);
     request.send(null);
   }
   else {
-    request.open("GET", "https://smapi.lnu.se/api/?api_key=" + smapiKey + "&debug=false&controller=food&method=getfromlatlng&lat=" + lat1 + "&lng=" + lan1 + "&sub_types=" + kW + "&order_by=distance_in_km&sort_in=ASC", true);
+    request.open("GET", "https://smapi.lnu.se/api/?api_key=" + smapiKey + "&debug=false&controller=food&method=getfromlatlng&lat=" + lat + "&lng=" + lon + "&sub_types=" + kW + "&order_by=distance_in_km&sort_in=ASC", true);
     request.send(null);
   }
   request.onreadystatechange = function () {

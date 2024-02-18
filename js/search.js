@@ -1,7 +1,7 @@
 // javaScript för sökrutan 
 var smapiKey = "6OP4TY35"; // smapi nyckel
-var lat1 = 56.843834; //användarens lat
-var lng1 = 14.807560; //användarens lng 
+var lat1= localStorage.getItem("xLat"); //användarens lat
+var lng1= localStorage.getItem("xLon");  //användarens lng 
 var nmElem; // referns till element där visas hotdog ställen
 var nms // namn på maträtt i sökrutan
 var searchElem; // referense till sökrutan 
@@ -45,14 +45,14 @@ function searchName() {
   }
 } // slut searchName
 // funktion för användarens lat och lng 
-/*function loc(position) {
+function loc(position) {
   lat1 = position.coords.latitude;
   lng1 = position.coords.longitude;
 }// slut loc
 // error funktion
 function error() {
   console.log("plats gick inte att hämtas:", error);
-}// slut error*/
+}// slut error
 // funktion för att begära ställen efter angivet ord i sökrutan 
 function rqst(nms) {
   holderElem.innerHTML="";
