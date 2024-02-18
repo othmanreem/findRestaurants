@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="foodfinder-webbsite">
+    <meta name="description" content="foodfinder - en webbplats för att söka efter restauranger i närheten">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="maträtt, mat, food, lunch, hamburger, pizza, Vegitariskt, Asiatiskt, korv, kebab, restaurang, snabbmat,kafeer ">
+    <script src='https://kit.fontawesome.com/0911954135.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" type="text/css" href="css/resulte.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>cafe</title>
+
+
+</head>
+
+<body>
+
+
+
+
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img class="nav_logo" src="img/nav-logo.png" alt="logo"></a>
+
+            <a href="index.html">
+                <p class="text">FoodFinder</p>
+            </a>
+        </div>
+
+
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"> Hem</a>
+                    <a href="index.html"><i class="fa-solid fa-house"></i></a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+        </div>
+
+    </header>
+    <section class="res" id="up">
+        <h3>restauranger som finns i närhäten</h3>
+
+
+        <a href="index.html#categories" class="name">
+
+            <i class="fa-solid fa-arrow-left fa-beat" title="back"></i>
+            <span class="back">Tillbaka</span>
+
+        </a>
+
+
+
+    </section>
+
+    <main class="main" id="wrapper">
+        <p class="filter">Sortera efter:</p>
+        <div>
+
+            <button value="rat" class="cafeBtns"> Högst betyg</button>
+            <button value="dis" class="cafeBtns"> Närmast kafe</button>
+            <p id="loadingMssg"></p>
+        </div>
+
+        <div id="cafe">
+
+  
+        </div>
+
+    </main>
+    <a href="#up" class="up">
+        <img class="jumping-element" src="img/uparrow.png" alt="Up Arrow">
+    </a>
+
+    <footer>
+        <section class="footer" id="contact">
+
+            <div class="box-container">
+                <div class="box">
+
+                    <h4>Öland-Småland</h4>
+
+
+                    <h3>Utforska en värld av smaker och hitta dina nya matfavoriter på ett ögonblick</h3>
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var loadingMssg = document.getElementById("loadingMssg"); // laddnings meddelande
+            var representElem = document.getElementById("cafe"); // tom div element för att presentera kafeer i
+            var cafesData = JSON.parse(localStorage.getItem("cafesOb")); // hämta och parsa arreyn med kafeer från lokal lagring
+            var usrsLat = localStorage.getItem("xLat");// hämtar användarens lat från lokal lagring 
+            var usrsLon = localStorage.getItem("xLon"); // hämtar användarens lng från lokal lagring 
+            handelCafes(cafesData);
+            var cafeBtsAry = document.getElementsByClassName("cafeBtns"); // arrey för sortering knappar
+            for (let i = 0; i < cafeBtsAry.length; i++) {
+                cafeBtsAry[i].addEventListener("click", function () {
+                    handelCafes(cafesData, cafeBtsAry[i].getAttribute("value"));
+                })
+            }
+            // funktion för att representera och sortera kafeer efter klickad knapp
+            function handelCafes(cData, valAtr) {
+                loadingMssg.style.display = "block";
+                representElem.innerHTML = "";
+                let cafes = []; // en tom arrey för att pusha kafeer 
+                for (let i = 0; i < cData.length; i++) {
+                    let cNm = cData[i].name;// egenskapen namn 
+                    let cty = cData[i].city; // egenskapen city
+                    let lat2 = cData[i].lat;  // egenskapen lat för aktuel restaurang
+                    let lan2 = cData[i].lng; // egenskapen lng för aktuel restaurang
+                    let R = 6371;// jordens radia
+                    let dLat = (lat2 - usrsLat) * Math.PI / 180; // variabel för skilnaden mellan användarens och restaurang lat
+                    let dLon = (lan2 - usrsLon) * Math.PI / 180; //  variabel för skilnaden mellan användarens och restaurang lng
+                    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                        Math.cos(usrsLat * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                        Math.sin(dLon / 2) * Math.sin(dLon / 2); // hälften av avståndet  mellan användaren och kafee i kvadrat
+                    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                    let d = R * c; // avståndet mellan punkterna 
+                    let rat = cData[i].price;// rating egenskapen 
+                    cafes.push({ name: cNm, city: cty, distance: d, la: lat2, ln: lan2, ratOb: rat });
+                }
+                switch (valAtr) {
+                    case "rat":
+                        cafes.sort(function (a, b) {
+                            return b.ratOb - a.ratOb;
+                        });
+                        break;
+                    case "dis":
+                        cafes.sort(function (a, b) {
+                            return a.distance - b.distance;
+                        });
+                        break;
+                }
+                // funktion för att representera info om kafeer 
+                cafes.forEach(function (cafe) {
+                    let latt = cafe.la; // lat för ett kafee i arreyn 
+                    let lngg = cafe.ln; // lng för ett kafee i arreyn
+                    let nElem = document.createElement("p"); // element för namn  
+                    let ntxt = document.createTextNode(cafe.name);  // spara namn egenskapen som text sträng 
+                    nElem.appendChild(ntxt);
+                    representElem.appendChild(nElem);
+                    nElem.style.margin = "3px";
+                    nElem.style.paddingTop = "30px";
+                    nElem.style.fontSize = "30px";
+                    nElem.style.color = "black";
+                    nElem.style.fontSize = "30px";
+                    let ratRound = Math.round(cafe.ratOb); // avrunda till hel tal
+                    let ratTxt = document.createTextNode("Betygssättning: " + ratRound + " "); //spara rating som text
+                    representElem.appendChild(ratTxt);
+representElem.style.fontSize ="21px";
+representElem.style.lineHeight ="40px";
+representElem.style.color ="black";
+                    for (let l = 0; l < ratRound; l++) {
+                        let ratImg = document.createElement("img"); // bild på stjärna
+                        ratImg.setAttribute("src", "img/star.png");
+                        ratImg.style.width = "28px";
+                        ratImg.style.paddingLeft = "4px";
+                        representElem.appendChild(ratImg);
+                    }
+                    let cElem = document.createElement("p"); // element för stad
+                    let cTxt = document.createTextNode("Ligger i: " + cafe.city); // spara stadens namn som text sträng
+                    cElem.appendChild(cTxt);
+                    representElem.appendChild(cElem);
+                    let disElem = document.createElement("p"); // element för avståndet
+                    let dis = document.createTextNode("Avståndet är cirka: " + Math.round(cafe.distance) + " km"); // spara avståndet som text sträng
+                    disElem.appendChild(dis);
+                    disElem.style.fontWeight = "430";
+                    representElem.appendChild(disElem);
+                    let mapElem = document.createElement("div");  // emenent för att behålla karta objektet
+                    representElem.appendChild(mapElem);
+             mapElem.style.height = "200px";
+                    mapElem.style.width = "320px";
+                    mapElem.style.marginTop = "6px";
+
+                    let lat3 = parseFloat(latt);// göra värdet i latt till sifror
+                    let lan3 = parseFloat(lngg); // göra värdet i lngg till sifror
+                    let lat4 = parseFloat(usrsLat); // göra värdet i usrsLat till sifror
+                    let lon4 = parseFloat(usrsLon); // göra värdet i usrsLon till sifror
+                    let map = new google.maps.Map(mapElem, {
+                        center: { lat: lat4, lng: lon4 },
+                        zoom: 12,
+                    });
+                    let pos = new google.maps.Marker({
+                        position: { lat: lat4, lng: lon4 },
+                        map: map,
+                        label: "din position"
+                    });
+                    let desti = new google.maps.Marker({
+                        position: { lat: lat3, lng: lan3 },
+                        map: map,
+                        label: "din destination"
+                    });
+                    let directionsService = new google.maps.DirectionsService(); // objektet skickar behäran till Maps Directions api för vägbeskrivning
+                    let directionsRenderer = new google.maps.DirectionsRenderer(); // objektet visar vägbeskrivning som begäras med objektet directionsService 
+                    directionsRenderer.setMap(map);
+                    // vägbeskrivning bägran mellan två punkter 
+                    let diReq = {
+                        origin: { lat: lat4, lng: lon4 },
+                        destination: { lat: lat3, lng: lan3 },
+                        travelMode: google.maps.TravelMode.WALKING
+                    };
+                    directionsService.route(diReq, function (response, status) {
+                        if (status === google.maps.DirectionsStatus.OK) {
+                            directionsRenderer.setDirections(response);
+                        } else {
+                            console.log("Directions begäran misslyckades. Status: " + status);
+                        }
+                    });
+                    let line = document.createElement("hr"); // rad element mellan restaurangerna
+                    representElem.appendChild(line);
+                });
+                loadingMssg.style.display = "none";
+                representElem.style.display = "block";
+            }// slut handelCafes 
+        });
+    </script>
+
+    <!--
+    <script>
+        generateContent(); 
+      </script>
+  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_QOr-9xpFP20LOKdLzIMe97-qI7MgLMY"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

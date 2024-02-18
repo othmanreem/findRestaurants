@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="foodfinder-webbsite">
+    <meta name="description" content="foodfinder - en webbplats för att söka efter restauranger i närheten">
+    <meta name="keywords" content="maträtt, mat, food, lunch, hamburger, pizza, Vegitariskt, Asiatiskt, korv, kebab, restaurang, snabbmat, ">
+    <script src='https://kit.fontawesome.com/0911954135.js' crossorigin='anonymous'></script>
+
+    <!--========= CSS ============-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/resulte.css">
+
+    <title>Foodfinder</title>
+</head>
+<body>
+ 
+    <!--=========Header===========-->
+    <header class="header" id="header"> 
+
+        
+        <div class="logo">
+            <a href="index.html" rel="">
+                <img class="nav_logo" alt="logo" src="img/nav-logo.png"></a> 
+                
+                <a href="index.html"> <p class="text" >FoodFinder</p></a> 
+        </div>
+
+       
+<nav class= "navbar">
+<ul class="nav-menu">
+<li class="nav-item">
+    <li class="nav-item"><a 
+        href="index.html" class="nav-link"> Hem</a>
+        <a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+
+</ul>
+    </nav>
+
+    <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+
+    </div>
+    
+    </header>
+    
+
+    <section class="home" id="home">
+        <div class="home_content">
+            <h3> <span>Food Finder</span></h3>
+            
+            <form method="get" action="/search" id="search">
+              
+                <label for="search-label">  </label>
+                <input type="text" id="search-label" placeholder="Sök Efter en maträtt" name="names"> 
+              <button type="button" name="searchButton" class="searchButton">
+                <i class="fa-solid fa-magnifying-glass" title="search"></i>Sök
+              </button>
+            
+            </form>
+
+            <div class="sortbtn" id="rndmHolder">
+                <p>Slumpa din nästa lunchupplevelse</p>
+             <button  id="butt"> Börja Slumpa </button>
+                <button id="endbutt">Sluta Slumpa</button>
+                    <div id="restext"></div>
+                </div>
+                <div class="sortbtn" id = "buttons">
+                    </div>
+
+
+              <div id="resulte">
+               
+              </div>
+              <h2 class="arrow_text">Upptäck våra kategorier
+              </h2>
+       <a href="#categories" class="arrow"><img src="img/arrowup.png"  alt= "arrow" class="jumping-element"></a>
+    </div>
+    </section>
+
+    
+    <!--End seaction-->
+
+    <!--==========Main===============-->
+
+  
+    <main class="main">
+        <h1 class="h1"> Kategorier</h1>
+
+        <section class="container" id="categories">
+            <div class="banner">
+                
+                <a href="food.html" class = "ctgrys" rel = "BURGERS">
+                <img src="img/burger.jpg" alt="burger-img"></a>
+                <div class="content">
+                  
+                    <a href="food.html" class = "ctgrys btn" rel = "BURGERS" > <h4>Hamburger</h4></a>
+            </div>
+            </div>
+        
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "PIZZA" >
+                <img src="img/piza.jpg" alt="pizza-img"></a>
+                <div class="content">
+                
+                    <a href="food.html" class = "ctgrys btn" rel = "PIZZA">Pizza</a>
+            </div>
+            </div>
+        
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "ASIAN">
+                <img src="img/Asian.jpg" alt="asian-food"></a>
+                <div class="content">
+                
+                    <a href="food.html" class = "ctgrys btn" rel = "ASIAN"   >Asiatiskt</a>
+            </div>
+            </div>
+        
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "vegetarian_option" >
+                <img src="img/veg.jpg" alt="veggo"></a>
+                <div class="content">
+                    
+                    <a href="food.html" class = "ctgrys btn" rel = "vegetarian_option"  >Vegitariskt</a>
+            </div>
+            </div>
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "A_LA_CARTE" >
+                <img src="img/lacar.jpg" alt="lacarte"></a>
+                <div class="content">
+                    <a href="food.html" class = "ctgrys btn" rel = "A_LA_CARTE"  >A La carte</a>
+            </div>
+            </div>
+        
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "HOT_DOGS" >
+                <img src="img/hot-dogs.jpg" alt="hot_dogs"></a>
+                <div class="content">
+               
+                   
+                    <a href="food.html" class = "ctgrys btn" rel = "HOT_DOGS">Korv</a>
+            </div>
+            </div>
+        
+            <div class="banner">
+                <a href="cafe.html" class = "ctgrys" rel = "cafe" >
+                    <img src="img/fika.jpg" alt=""> </a>
+                <div class="content">
+                
+                    <a href="cafe.html" class = "ctgrys btn" rel = "cafe">Fika</a>
+            </div>
+            </div>
+        
+        
+            <div class="banner">
+                <a href="food.html" class = "ctgrys" rel = "OTHER" >
+                  <img src="img/others.jpg" alt="">
+                </a>
+                <div class="content">
+               
+               
+                  <a href="food.html" class = "ctgrys btn" rel = "OTHER">Annat</a>
+                </div>
+              </div>
+              
+        </section>
+
+        <section class="about" id="about">
+            <h2 class="h1"> Om oss</h2>
+        
+        </section>
+
+    </main>
+
+   
+    
+    <!---========footer==========-->
+<footer id="foot">
+    <section class="footer" id="contact">
+
+    <div class="box-container">
+        <div class="box">
+
+            <h4>Öland-Småland</h4>
+
+
+<h3>Utforska en värld av smaker och hitta dina nya matfavoriter på ett ögonblick</h3>
+
+<p>Med food finder kan du enkelt söka efter restauranger baserat på dina preferenser, som exempelvis kökstyp, prisnivå, avstånd. Sökfunktion är också användarvänlig och snabb, vilket gör att du kan hitta din nästa måltid på några sekunder. Och det bästa av allt - vår webbplats är helt gratis att använda! Så varför vänta? Upplev maten på ett nytt sätt med food finder idag!
+</p>
+
+</div>
+</div>
+</section>
+</footer>
+      
+        
+
+
+    <!--=======Script link===========-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_QOr-9xpFP20LOKdLzIMe97-qI7MgLMY"></script>
+<script src="js/search.js"></script>
+<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+

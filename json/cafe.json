@@ -1,0 +1,844 @@
+{
+    "cafe":[
+        {
+          
+            "name" : "Thimons Konditori",
+            "city" : "Aneby",
+            "lat" : "57.83909597467324",
+            "lng" : "14.818414881699159",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Stalpets café, minigolf och hantverk",
+            "city" : "Aneby",
+            "lat" : "57.86437464934116",
+            "lng" : "14.822818290581385",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Nya Lennarts Konditori",
+            "city" : "Eksjö",
+            "lat" : "57.68247833747131",
+            "lng" : "14.958646284852994",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Eksjö Konditori Gamla Stan",
+            "city" : "Eksjö",
+            "lat" : "57.68616065321189",
+            "lng" : " 14.964722340033521",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Citykonditoriet",
+            "city" : "Gislaved",
+            "lat" : "57.30610378840476",
+            "lng" : "13.542028732245162",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Balder",
+            "city" : "Gislaved",
+            "lat" : "57.32238406580426",
+            "lng" : "13.548039191558347",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Cafe Humlagård",
+            "city" : "Gnosjö",
+            "lat" : "57.366890769062664",
+            "lng" : "13.727940315844261",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "Bernts Konditori",
+            "city" : "Gnosjö",
+            "lat" : "57.36466902929291",
+            "lng" : " 13.733433480439249",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Landhs Konditori Habo",
+            "city" : "Habo",
+            "lat" : "57.91661090243411",
+            "lng" : "14.074491202088968",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Lustfyllt",
+            "city" : "Habo",
+            "lat" : "57.92207529498296",
+            "lng" : "14.12320831738721",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Lindströms Cafe & Konditori",
+            "city" : "Jönköping",
+            "lat" : "57.775609246024544",
+            "lng" : "14.15230535500419",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Espresso House",
+            "city" : "Jönköping",
+            "lat" : "57.78221888639121",
+            "lng" : " 14.173749731564357",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Källarbageriet",
+            "city" : "Mullsjö",
+            "lat" : "57.91612323581172",
+            "lng" : " 13.87825722715364",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "Landhs Konditori",
+            "city" : "Mullsjö",
+            "lat" : "57.91486603428837",
+            "lng" : "13.88425559121835",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Café Princess",
+            "city" : "Nässjö",
+            "lat" : "57.654755134030175",
+            "lng" : "14.695687896771341",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Thimons Konditori AB",
+            "city" : "Nässjö",
+            "lat" : "57.65257578707778",
+            "lng" : "14.69507478189855",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Melins Konditori",
+            "city" : "Sävsjö",
+            "lat" : "57.40336519510931",
+            "lng" : "14.662490139252245",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Lilla Caféet i Sävsjö",
+            "city" : "Sävsjö",
+            "lat" : "57.40220518082984",
+            "lng" : " 14.663039849996782",
+            "price" : "4.8"
+        },
+        {
+          
+            "name" : "Segersons Cafe & spel",
+            "city" : "Tranås",
+            "lat" : "58.035732237050176",
+            "lng" : " 14.97546644772756",
+            "price" : "4.6"
+        },
+        {
+          
+            "name" : "Café Gula Huset",
+            "city" : "Tranås",
+            "lat" : "58.03674769059973",
+            "lng" : "14.977476467405793",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Lilla Tårtbageriet",
+            "city" : "Vaggeryd",
+            "lat" : "57.498554038514094",
+            "lng" : " 14.146605643033956",
+            "price" : "4.8"
+        },
+        {
+          
+            "name" : "Vaggeryds gårdscafé",
+            "city" : "Vaggeryd",
+            "lat" : "57.49258998194135",
+            "lng" : "14.159507791409277",
+            "price" : "4.9"
+        },
+        {
+          
+            "name" : "Espresso House Vetlanda",
+            "city" : "Vetlanda",
+            "lat" : "57.426274363012496",
+            "lng" : " 15.085954632102306",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Waynes Coffee",
+            "city" : "Vetlanda",
+            "lat" : "57.426232794884",
+            "lng" : "15.088316208428752",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Ditt Café Livingroom",
+            "city" : "Värnamo",
+            "lat" : "57.18417741117533",
+            "lng" : " 14.045161105417504",
+            "price" : "3.8"
+        },
+        {
+          
+            "name" : "Rättvist Butik & Cafe",
+            "city" : "Värnamo",
+            "lat" : "57.1840100325611",
+            "lng" : "14.047319022561945",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Våran Bakgård",
+            "city" : "Borgholm",
+            "lat" : "56.88055081916831",
+            "lng" : "16.6555515617664",
+            "price" : "4.8"
+        },
+        {
+          
+            "name" : "Bönan På Hörnet (Borgholm, Öland)",
+            "city" : "Borgholm",
+            "lat" : "56.87864859981104",
+            "lng" : "16.659709920559138",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Konditori Fenix",
+            "city" : "Emmaboda",
+            "lat" : "56.630672371668375",
+            "lng" : "15.535128313743792",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Salladscafét",
+            "city" : "Emmaboda",
+            "lat" : "56.62978908026964",
+            "lng" : " 15.542010201723933",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "La Vida Café",
+            "city" : "Hultsfred",
+            "lat" : "57.48780696890496",
+            "lng" : "15.841766184666977",
+            "price" : "4.0"
+        },
+        {
+          
+            "name" : "Cafe Gränden",
+            "city" : "Hultsfred",
+            "lat" : "57.48764731210559",
+            "lng" : " 15.841230902909478",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Värdshuset Emågården",
+            "city" : "Högsby",
+            "lat" : "57.16545842071857",
+            "lng" : " 16.02571524894542",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Bann Thai (korat)Restaurang i Högsby",
+            "city" : "Högsby",
+            "lat" : "57.16176888738419",
+            "lng" : "16.033114477441792",
+            "price" : "3.8"
+        },
+        {
+          
+            "name" : "OAS Kalmar Cafe",
+            "city" : "Kalmar",
+            "lat" : "56.66369354603164",
+            "lng" : " 16.36440138816386",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "Kullzénska caféet",
+            "city" : "Kalmar",
+            "lat" : "56.663809989810865",
+            "lng" : "16.362595617261462",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Nelssons Café",
+            "city" : "Mönsterås",
+            "lat" : "57.04183824858065",
+            "lng" : " 16.446149576881115",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Lilla Bageriet Mönsterås",
+            "city" : "Mönsterås",
+            "lat" : "57.043713292226826",
+            "lng" : "16.44614014066663",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Café Söderbönor (Mörbylånga)",
+            "city" : "Mörbylånga",
+            "lat" : "56.52703339888198",
+            "lng" : " 16.373760736790945",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Lilla Bistron - Bröderna Halldén",
+            "city" : "Mörbylånga",
+            "lat" : "56.52673365169619",
+            "lng" : "16.376626361607226",
+            "price" : "4.6"
+        },
+        {
+          
+            "name" : "Priems Konditori i Nybro",
+            "city" : "Nybro",
+            "lat" : "56.74395456768613",
+            "lng" : "15.913659803126647",
+            "price" : "4.3"
+        }, 
+        {
+          
+            "name" : "Lilla Café",
+            "city" : "Nybro",
+            "lat" : "56.74466282039303",
+            "lng" : "15.907085201044767",
+            "price" : "3.7"
+        },
+        {
+          
+            "name" : "Café Shalom",
+            "city" : "Oskarshamn",
+            "lat" : "57.26550830741824",
+            "lng" : "16.448488255727085",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Espresso House Oskarshamn",
+            "city" : "Oskarshamn",
+            "lat" : "57.26584702837687",
+            "lng" : "16.446738076336914",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Olssonska Gården",
+            "city" : "Torsås",
+            "lat" : "56.41211552035386",
+            "lng" : "15.999163936823656",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Pe P:s konditori i Torsås",
+            "city" : "Torsås",
+            "lat" : "56.41252735091074",
+            "lng" : "16.001854050066996",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "På Spåret",
+            "city" : "Vimmerby",
+            "lat" : "57.66334661722152",
+            "lng" : "15.858357790779282",
+            "price" : "3.8"
+        },
+        {
+          
+            "name" : "Bakfickan i Vimmerby",
+            "city" : "Vimmerby",
+            "lat" : "57.66590408962514",
+            "lng" : "15.854446724421305",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Kafé Kannan",
+            "city" : "Västervik",
+            "lat" : "57.758694682006336",
+            "lng" : "16.63732598137482",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Espresso House",
+            "city" : "Västervik",
+            "lat" : "57.75846358689997",
+            "lng" : "16.637786692889218",
+            "price" : "4.0"
+        },
+        {
+          
+            "name" : "Café St.Clair",
+            "city" : "Alvesta",
+            "lat" : "56.90016577181784",
+            "lng" : "14.556249284685034",
+            "price" : "4.8"
+        },
+        {
+          
+            "name" : "Lammet & Brödet",
+            "city" : "Alvesta",
+            "lat" : "56.90235495858538",
+            "lng" : "14.548103231967838",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Peppes konditori",
+            "city" : "Lessebo",
+            "lat" : "56.7537215287609",
+            "lng" : "15.268280794328163",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Bageri och Cafe",
+            "city" : "Lessebo",
+            "lat" : "56.67730625013205",
+            "lng" : "15.366885818942247",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Lilla Hembageriet",
+            "city" : "Ljungby",
+            "lat" : "56.833283893552064",
+            "lng" : "13.939417580451995",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Espresso House Ljungby",
+            "city" : "Ljungby",
+            "lat" : "56.83398285530492",
+            "lng" : "13.941183755725854",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Centralkonditoriet",
+            "city" : "Markaryd",
+            "lat" : "56.45999089653441",
+            "lng" : "13.595743108537977",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Café Iris",
+            "city" : "Markaryd",
+            "lat" : "56.46090660264878",
+            "lng" : "13.596320520920765",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Börjes Cafeteria Hyllan",
+            "city" : "Tingsryd",
+            "lat" : "56.52475760104695",
+            "lng" : "14.978521918424345",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Biggans Café",
+            "city" : "Tingsryd",
+            "lat" : "56.52412166935082",
+            "lng" : "14.97996376246715",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Linas Butik & Café",
+            "city" : "Uppvidinge",
+            "lat" : "57.16876778137935",
+            "lng" : "15.345004082752931",
+            "price" : "4.6"
+        },
+        {
+          
+            "name" : "Alstervik café & minigolf",
+            "city" : "Uppvidinge",
+            "lat" : "56.969937774988054",
+            "lng" : "15.629509511430014",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Kafé de luxe",
+            "city" : "Växjö",
+            "lat" : "56.8777766747536",
+            "lng" : "14.80649094408353",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Gården Café",
+            "city" : "Växjö",
+            "lat" : "56.88374441772582",
+            "lng" : "14.765829476039558",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Café Kagan Älmhult",
+            "city" : "Älmhult",
+            "lat" : "56.55171199234331",
+            "lng" : "14.13925610163262",
+            "price" : "4.0"
+        },
+        {
+          
+            "name" : "Elmhult Café a Bageri",
+            "city" : "Älmhult",
+            "lat" : "56.55363365423011",
+            "lng" : "14.14150329125778",
+            "price" : "3.7"
+        },
+        {
+          
+            "name" : "Sandys",
+            "city" : "Falkenberg",
+            "lat" : "56.888663393489935",
+            "lng" : "12.495245206856309",
+            "price" : "3.9"
+        },
+        {
+          
+            "name" : "Sagocaféet",
+            "city" : "Falkenberg",
+            "lat" : "56.90394061671195",
+            "lng" : "12.487976420427469",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Fribergs Konditori",
+            "city" : "Halmstad",
+            "lat" : "56.678585949233664",
+            "lng" : "12.858411885835",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Lindas Ekocafé och Skafferi",
+            "city" : "Halmstad",
+            "lat" : "56.668028258119165",
+            "lng" : "12.948868203178762",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Lindas Ekocafé och Skafferi",
+            "city" : "Hylte",
+            "lat" : "56.66802936243716",
+            "lng" : "12.948867602249205",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Inez och Greta, Café och Bageri",
+            "city" : "Hylte",
+            "lat" : "56.670993637572536",
+            "lng" : "12.913080214011451",
+            "price" : "4.9"
+        },
+        {
+          
+            "name" : "Café Trubaduren",
+            "city" : "Kungsbacka",
+            "lat" : "57.49083177401594",
+            "lng" : "12.075602790026254",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Cafe Röda Stugan",
+            "city" : "Kungsbacka",
+            "lat" : "57.487327442320485",
+            "lng" : "12.078233249763592",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Café Mignon",
+            "city" : "Varberg",
+            "lat" : "57.1057147022431",
+            "lng" : "12.251616075901568",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Lilla Träslövs Finbageri café",
+            "city" : "Varberg",
+            "lat" : "57.1060641840192",
+            "lng" : "12.253646652030273",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Milles Lunch & Cafe",
+            "city" : "Laholm",
+            "lat" : "56.513449714120064",
+            "lng" : "13.043267892689434",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Cafe Zebra",
+            "city" : "Laholm",
+            "lat" : "56.508287985509995",
+            "lng" : "13.055109226333352",
+            "price" : "3.0"
+        },
+        {
+          
+            "name" : "Smaskens Café",
+            "city" : "Boxholm",
+            "lat" : "58.19671747861579",
+            "lng" : "15.053038701567422",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Boxholms Torgservering AB",
+            "city" : "Boxholm",
+            "lat" : "58.197032499231966",
+            "lng" : "15.053196740995304",
+            "price" : "4.6"
+        },
+        {
+          
+            "name" : "Bildningen Kafé",
+            "city" : "Finspång",
+            "lat" : "58.705638815580905",
+            "lng" : "15.777088526633591",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Joan's Finspång",
+            "city" : "Finspång",
+            "lat" : "58.707857976706265",
+            "lng" : "15.774951699752046",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Samuels glasskafé",
+            "city" : "Kinda",
+            "lat" : "58.0177884079789",
+            "lng" : "15.424488076088823",
+            "price" : "5.0"
+        },
+        {
+          
+            "name" : "Café Columbia",
+            "city" : "Kinda",
+            "lat" : "57.98738506176573",
+            "lng" : "15.634586679259096",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Linköpings festvåning",
+            "city" : "Linköping",
+            "lat" : "58.40740865594786",
+            "lng" : "15.6242530875457",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Simons Rosteri & Bageri",
+            "city" : "Linköping",
+            "lat" : "58.40874418634565",
+            "lng" : "15.626130486145367",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Nyfiket Mjölby",
+            "city" : "Mjölby",
+            "lat" : "58.326253653204205",
+            "lng" : "15.129043433059959",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Café Gusto",
+            "city" : "Mjölby",
+            "lat" : "58.32530106468974",
+            "lng" : "15.129683807603897",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Espresso House Motala",
+            "city" : "Motala",
+            "lat" : "58.53707527869072",
+            "lng" : "15.035278867054338",
+            "price" : "4.0"
+        },
+        {
+          
+            "name" : "Ubbes Konditori & Bistro",
+            "city" : "Motala",
+            "lat" : "58.5372723072911",
+            "lng" : "15.036462050252405",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Kafé Kuriosa",
+            "city" : "Norrköping",
+            "lat" : "58.58570002786493",
+            "lng" : "16.187542091788114",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Lindahls konditorier",
+            "city" : "Norrköping",
+            "lat" : "58.586162289035315",
+            "lng" : "16.19017848249585",
+            "price" : "3.8"
+        },
+        {
+          
+            "name" : "Fix-Konditori",
+            "city" : "Söderköping",
+            "lat" : "58.475145723925195",
+            "lng" : "16.33358544755948",
+            "price" : "4.5"
+        },
+        {
+          
+            "name" : "Café Stinsen",
+            "city" : "Söderköping",
+            "lat" : "58.47844757856121",
+            "lng" : "16.32303418393972",
+            "price" : "1.0"
+        },
+        {
+          
+            "name" : "Gamla Konditoriet",
+            "city" : "Vadstena",
+            "lat" : "58.448090071470276",
+            "lng" : "14.890140939509221",
+            "price" : "5.0"
+        },
+        {
+          
+            "name" : "Café Nostalgi",
+            "city" : "Vadstena",
+            "lat" : "58.44697773758807",
+            "lng" : "14.887098316441572",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "Bageri & Cafe",
+            "city" : "Valdemarsvik",
+            "lat" : "58.20400984942333",
+            "lng" : "16.604469247622784",
+            "price" : "4.7"
+        },
+        {
+          
+            "name" : "Lilla Blå Café & Restaurang",
+            "city" : "Valdemarsvik",
+            "lat" : "58.202106586141554",
+            "lng" : "16.60152850782555",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "HUMLE från Kalvsved AB",
+            "city" : "Ydre",
+            "lat" : "57.82300577044781",
+            "lng" : "15.28184313528392",
+            "price" : "4.2"
+        },
+        {
+          
+            "name" : "Ryzätras Lunch & Catering",
+            "city" : "Ydre",
+            "lat" : "57.8011523500968",
+            "lng" : "15.149911115546473",
+            "price" : "4.4"
+        },
+        {
+          
+            "name" : "Södertegs Café",
+            "city" : "Åtvidaberg",
+            "lat" : "58.20164233567054",
+            "lng" : "16.00122660138699",
+            "price" : "4.6"
+        },
+        {
+          
+            "name" : "Industricafėet",
+            "city" : "Åtvidaberg",
+            "lat" : "58.21027768422356",
+            "lng" : "15.988485687799384",
+            "price" : "4.1"
+        },
+        {
+          
+            "name" : "Kafe Lovisa",
+            "city" : "Ödeshög",
+            "lat" : "58.22894504465185",
+            "lng" : "14.649243926326871",
+            "price" : "4.3"
+        },
+        {
+          
+            "name" : "Lysing's Konditori",
+            "city" : "Ödeshög",
+            "lat" : "58.22892571706065",
+            "lng" : "14.653769413234098",
+            "price" : "4.5"
+        }
+    ]
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

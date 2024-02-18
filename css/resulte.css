@@ -1,0 +1,287 @@
+
+  #wrapper{
+    background-color: #ecddd978;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+  }
+
+  
+
+#restext{
+  background-color:  hsla(18, 33%, 51%, 0.491);
+  color: #ffffff;
+  border-radius: 10px 10px ;
+  width: 100%;
+  height: auto;
+  font-weight: 500;
+  line-height: 2;
+  text-align: center;
+  font-size: 2.5rem;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+.sortbtn p{
+  margin-top:30px ;
+  width: 100%;
+font-size: 2.5rem;
+font-weight: 500;
+color: rgb(250, 246, 241);
+
+}
+
+.sortbtn button{
+  margin-top: 15px;
+  font-size: 1.8rem;
+
+}
+
+
+
+
+
+.cafeBtns {
+  margin-top:5px;
+  font-size: 17px;
+
+
+}
+
+
+
+
+
+
+
+  .main{
+    font-size: 2.3rem;
+    color:rgba(29, 28, 28, 0.773) ;
+    
+  }
+  
+
+
+  .res{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 55vh ;
+    width: 100%;
+    z-index: 0;
+    background: url(../img/rest2.jpg);
+    background-size: cover !important;
+  }
+
+  .res h3{
+ display: none;
+  color:white;
+  font-size: 2rem;
+ 
+  }
+
+
+
+.cafe{
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  height: 50vh ;
+  width: 100%;
+  z-index: 0;
+  background: url(../img/fika.jpg);
+  background-size: cover !important;
+
+}
+
+#cafe{
+  color: black;
+}
+
+
+.name {
+  font-weight: 500;
+  margin-top: 20rem;
+  padding: 10px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  color: var(--body-color);
+  border-radius: 0px 80px ;
+    width: 400px;
+  text-align: center;
+  
+  background: linear-gradient(to bottom, rgba(197, 99, 63, 0.989)25%, rgb(199, 67, 19) 70%);
+  font-size: 4.5rem;
+  color: var(--body-color);
+  box-shadow: var(--box-shadow);
+}
+
+
+
+  .name:hover {
+    
+    background: linear-gradient(to bottom, rgba(197, 99, 63, 0.85) 25%, rgba(197, 99, 63, 0.822) 70%);
+      
+  }
+
+
+
+
+  button:hover {
+    background: linear-gradient(to bottom, rgba(197, 99, 63, 0.784) 25%, rgba(197, 99, 63, 0.791) 70%);
+      
+  }
+
+  
+   .waiting{
+    font-size: 4rem !important;
+    margin-top: 30px!important;
+    align-items: center!important;
+    text-align: center!important;
+    justify-content: center!important;
+    display: inline-block!important;
+    margin-left: 1rem!important;
+    color:  rgb(218, 83, 34)!important;
+  }   
+  
+
+
+#cafe{
+  width: 100%;
+    font-size: 2.5rem;
+       line-height: 6rem;
+       justify-content: center;
+   
+}
+
+ hr {
+  border: 1px solid rgb(236, 78, 21);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+  
+
+ 
+button {
+ 
+  border: none;
+  border-radius: 10px 80px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 5px;
+  background: linear-gradient(to bottom, rgba(248, 110, 51, 0.989)25%, rgb(199, 67, 19) 70%);
+  color: var(--body-color);
+
+
+  
+}
+  
+
+  
+  .Btn{
+  
+  margin: 1rem; 
+  display: inline-block;
+  font-size: 1.7rem;
+  background-color: rgba(197, 99, 63, 0.859);
+  letter-spacing: .1rem;
+  border-radius: 23px;
+  cursor: pointer;
+
+  
+  
+  
+  
+  }
+
+  
+  
+  
+
+
+  @media screen and (max-width: 768px ) {
+
+    .name {
+      font-weight: 400;
+      padding: 4px;
+      border-radius: 0px 80px ;
+      width: 260px;
+      height: 50px;
+      font-size:4rem;
+    
+  }
+  
+  
+  
+   
+  }
+  
+  
+
+
+
+
+@media screen and (max-width: 460px ) {
+
+  .name {
+    font-weight: 400;
+    padding: 2px;
+    border-radius: 0px 80px ;
+    width: 250px;
+    height: 40px;
+    font-size:3.5rem;
+  
+}
+
+
+
+
+
+
+
+.sortbtn{
+  margin-top:0px ;
+font-size: 2.5rem;
+color: rgb(250, 246, 241);
+
+}
+
+.sortbtn p{
+  margin-top:30px ;
+  width: 100%;
+font-size: 2.5rem;
+color: rgb(250, 246, 241);
+
+}
+
+.sortbtn button{
+  margin-top: 15px;
+  font-size: 1.8rem;
+
+}
+ 
+#restext{
+  background-color:  hsla(18, 33%, 51%, 0.491);
+  color: #ffffff;
+  border-radius: 10px 10px ;
+  width: 100%;
+  height: auto;
+  font-weight: 500!important;
+  line-height: 2;
+  text-align: center!important;
+  font-size: 2.5rem!important;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+}
+
+

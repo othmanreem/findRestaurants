@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="foodfinder-webbsite">
+    <meta name="description" content="foodfinder - en webbplats för att söka efter restauranger i närheten">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="maträtt, mat, food, lunch, hamburger, pizza, Vegitariskt, Asiatiskt, korv, kebab, restaurang, snabbmat, ">
+    <script src='https://kit.fontawesome.com/0911954135.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" type="text/css" href="css/resulte.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Food</title>
+
+
+</head>
+
+<body>
+
+
+
+
+    <header class="header" id="header">
+        <div class="logo">
+
+            <a href="index.html">
+                <img class="nav_logo" src="img/nav-logo.png" alt="logo"></a>
+
+            <a href="index.html">
+                <p class="text">FoodFinder</p>
+            </a>
+        </div>
+
+
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"> Hem</a>
+                    <a href="index.html"><i class="fa-solid fa-house"></i></a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+        </div>
+
+
+    </header>
+
+    <section class="res" id="up">
+        <h3>restauranger som finns i närhäten</h3>
+        <a href="index.html#categories" class="name">
+            <i class="fa-solid fa-arrow-left fa-beat" title="back"></i>
+            <span class="back">Tillbaka</span>
+
+        </a>
+
+    </section>
+
+  
+
+    <main class="main" id="wrapper">
+
+<p class="filter">Sortera efter:</p>
+
+  
+
+        <div id="representResulte">
+     
+
+        </div>
+    </main>
+
+    <a href="#up" class="up">
+        <img class="jumping-element" src="img/uparrow.png" alt="Up Arrow">
+    </a>
+    <footer>
+
+        <section class="footer" id="contact">
+
+            <div class="box-container">
+                <div class="box">
+
+                    <h4>Öland-Småland</h4>
+
+
+                    <h3>Utforska en värld av smaker och hitta dina nya matfavoriter på ett ögonblick</h3>
+
+
+
+                </div>
+            </div>
+
+        </section>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var representElem = document.getElementById("representResulte"); // element att representera restauranger
+            var usrsLat = localStorage.getItem("xLat");// hämtar användarens lat från lokal lagring 
+            var usrsLon = localStorage.getItem("xLon"); // hämtar användarens lng från lokal lagring 
+            var ctgryData = JSON.parse(localStorage.getItem("rspns")); // hämtar arrey med alla restauranger för aktuel från lokal lagring
+            handelRspns(ctgryData);
+            // funktion för att reperesentera info om restauranger
+            function handelRspns(resData) {
+                representElem.innerHTML = "";
+                let but1 = document.createElement("button"); // knapp för att visa restauranger med högst betyg längst upp
+              
+                let but1Txt = document.createTextNode("Högst betyg");// text för but1
+                
+                but1.appendChild(but1Txt);
+                
+                but1.style.marginTop= "5px";
+                but1.style.fontSize= "17px";
+                representElem.appendChild(but1);
+                but1.addEventListener("click", function () {
+                    sortReses(resData, "rating");
+                });
+
+          
+                let lowPricbtn = document.createElement("button");// knapp för att visa restauranger lägst pris högst upp
+                let lowPricbtnTxt = document.createTextNode("Längst pris");// text för lowPricbtn
+
+                lowPricbtn.appendChild(lowPricbtnTxt);
+                lowPricbtn.style.fontSize= "17px";   
+                lowPricbtn.style.marginTop= "5px";
+                         representElem.appendChild(lowPricbtn);
+                
+                lowPricbtn.addEventListener("click", function () {
+                    lowpFunc(resData, "avg_lunch_pricing");
+                });
+
+                for (let i = 0; i < resData.length; i++) {
+                    let data = resData[i];// data om aktuel restaurang
+                    let resNm = resData[i].name; // egenskapen namn 
+                    let nmTxt = document.createTextNode(resNm); // omvandla namn egenskapen till text node 
+                    let nmElem = document.createElement("p");// element för att behålla namn
+                    nmElem.appendChild(nmTxt);
+                    representElem.appendChild(nmElem);
+                    nmElem.style.margin = "3px";
+                    nmElem.style.paddingTop = "30px";
+                    nmElem.style.fontSize = "30px";
+                    nmElem.style.paddingBottom = "5px";
+                    nmElem.style.color = "black";
+                    let rat = resData[i].rating;// rating egenskapen
+            
+
+                    let ratRound = Math.round(rat); // avrunda till hel tal 
+
+                    let ratTxt = document.createTextNode("Betygssättning: " + ratRound + " "); // spara rating i text 
+                    
+                    representElem.appendChild(ratTxt);
+                    representElem.style.fontSize ="20px";
+
+                    representElem.style.lineHeight ="40px";
+
+
+            
+                    representElem.style.color ="black";
+             
+                    for (let l = 0; l < ratRound; l++) {
+                        let ratImg = document.createElement("img"); // bild på stjärna
+                        ratImg.setAttribute("src", "img/star.png");
+                        ratImg.style.width = "28px";
+                        ratImg.style.paddingLeft = "4px";
+                
+                        representElem.appendChild(ratImg);
+                        }
+                    let price = resData[i].avg_lunch_pricing; // pris egenskapen 
+                    let priceElem = document.createElement("p");
+                    let pricetxt = document.createTextNode(" Genomsnittligt lunchpris är: " +
+                        price + " Kr "); // priset i text sträng
+  
+                    priceElem.appendChild(pricetxt);
+                    priceElem.style.fontWeight= "410";
+
+                    representElem.appendChild(priceElem);
+                    let resSgsns = resData[i].search_tags; // sök tagar på maträtter som en restaurang erbjuder
+                    let sgsnElem = document.createElement("p"); // ett tomt p element för sgsnElemTxt och sgsnBtn 
+                    let sgsnElemTxt = document.createTextNode(resNm + " erbjuder:" ); // txt för användaren att läsa om att en restaurang serverar vissa matträtter
+                    sgsnElem.style.color= "black";
+                    sgsnElem.style.fontSize= "22px";
+                    sgsnElem.style.fontWeight = "400";
+                    
+                    let sgsnBtn = document.createElement("button"); // knapp för att visa maträtter som en restaurang har
+                    let sgsnBtnTxt = document.createTextNode("Visa"); // txt i sgsnBtn
+                    sgsnBtn.appendChild(sgsnBtnTxt);
+                    sgsnElem.appendChild(sgsnElemTxt);
+                    sgsnElem.appendChild(sgsnBtn);
+ 
+                    sgsnBtn.style.fontSize = "16px";
+  
+                   sgsnBtn.style.width = "85px";
+                    sgsnBtn.style.height = "32px";
+
+                    representElem.appendChild(sgsnElem);
+                    let sgsnHolder = document.createElement("p");// ett p element för att behålla resSgsns
+                   
+                    representElem.appendChild(sgsnHolder);
+                    sgsnBtn.addEventListener("click",  function () { sgsnFunc(resSgsns, sgsnHolder, sgsnBtn ); }); 
+                    let lat2 = resData[i].lat; // egenskapen lat för aktuel restaurang
+                    let lan2 = resData[i].lng;// egenskapen lng för aktuel restaurang
+                    let R = 6371; // jordens radia
+                    let dLat = (lat2 - usrsLat) * Math.PI / 180; // variabel för skilnaden mellan användarens och restaurang lat
+                    let dLng = (lan2 - usrsLon) * Math.PI / 180;//  variabel för skilnaden mellan användarens och restaurang lng
+                    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                        Math.cos(usrsLat * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                        Math.sin(dLng / 2) * Math.sin(dLng / 2); // hälften av avståndet  mellan användaren och restaurangen i kvadrat
+                    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); // beräkna vinkeln mellan Math.sqrt(a) och Math.sqrt(a)
+                    let d = R * c; // avståndet mellan punkterna 
+                    let km = "Avståndet är cirka: " + Math.round(d) + " km"; // avrunda avdtåndet + lägga till lämplig text 
+                    let disElem = document.createElement("p"); // element för avståndet 
+                    let disTxt = document.createTextNode(km);// spara avståndet i text node 
+                    disElem.appendChild(disTxt);
+                    disElem.style.fontWeight = "430";
+                    representElem.appendChild(disElem);
+                    let mapElem = document.createElement("div"); // elmenent för att behålla karta objektet
+                    representElem.appendChild(mapElem);
+                    mapFunc(data, mapElem);
+                    let idButton = document.createElement("button");// knapp för att hämta recensioner passerat på id 
+                    let butTxt = document.createTextNode("Recensioner ");// txt i knappen 
+                    idButton.appendChild(butTxt);
+                    idButton.style.fontSize = "18px";
+                    idButton.style.marginTop = "15px";
+                    
+                    representElem.appendChild(idButton);
+                    let holder = document.createElement("div");// element för att behåla recensioner
+                    representElem.appendChild(holder);                  idButton.addEventListener("click", function () { revFunc(data, holder); });
+                    let line = document.createElement("hr"); // rad element mellan restaurangerna
+                    representElem.appendChild(line);
+                }
+            } // slut handelRspns
+            // funktion för att visa maträtter som man kan äta hos en restaurang
+            function sgsnFunc(resSgsns, sgsnHolder, sgsnBtn) {
+                sgsnHolder.innerHTML="";
+                let resSgsnsTxt = document.createTextNode(resSgsns); // göra sök tagar till txtnode
+      
+                sgsnHolder.appendChild(resSgsnsTxt);
+                sgsnHolder.style.textTransform = "capitalize";
+                let sgsnEndBtn = document.createElement("button"); //  knapp för att dölja maträtter och skapa mer utrymme på skärmen
+                let sgsnEndBtnTxt = document.createTextNode("Dölja"); // text i sgsnEndBtn
+                sgsnEndBtn.appendChild(sgsnEndBtnTxt);
+                sgsnHolder.appendChild(sgsnEndBtn);
+                sgsnEndBtn.style.fontSize = "16px";
+                sgsnEndBtn.style.width = "85px";
+                sgsnEndBtn.style.height = "32px";
+                sgsnEndBtn.addEventListener("click",  function () { sgsnEnd(sgsnHolder); }); 
+            } // slut sgsnFunc
+            // funktion för att dölja maträtter
+            function sgsnEnd (sgsnHolder) {
+                sgsnHolder.innerHTML = "";
+            } // slut sgsnEnd
+            // function för att sortra restaurangerna från de som har högst betyg eller de som har högst lunch pris till de som har lägst betyg eller lunch pris
+            function sortReses(data, sortCriteria) {
+                representElem.innerHTML = ""
+                data.sort(function (a, b) {
+                    return b[sortCriteria] - a[sortCriteria];
+                });
+                // åter anropa funktionen för att representera obejkten efter sorteringen 
+                handelRspns(data);
+            } // slut sortReses
+
+            function lowpFunc (resdata, sortCriteria){
+                resdata.sort(function (a, b) {
+                    return a[sortCriteria] - b[sortCriteria];
+                });
+                handelRspns(resdata);
+            }
+            function nearFunc (disData, sortCrtra){
+                disData.sort(function (a,b) {
+                return a[sortCrtra] - b[sortCrtra]
+                })
+                handelRspns(disData);
+            }
+
+            // function för att skapa och visa karata
+            function mapFunc(res, mapElem) {
+                let lat3 = res.lat; // restaurangens lat
+                let lan3 = res.lng; //  restaurangens lng
+                lat3 = parseFloat(lat3); // göra värdet i lat3 till sifror
+                lan3 = parseFloat(lan3); // göra värdet i lng3 till sifror
+                let lat4 = parseFloat(usrsLat); // göra värdet i usrsLat till sifror
+                let lon4 = parseFloat(usrsLon); // göra värdet i usrsLon till sifror
+                mapElem.style.height = "200px";
+                mapElem.style.width = "320px";
+                mapElem.style.marginTop = "6px";
+
+                // karta objktet
+                let map = new google.maps.Map(mapElem, {
+                    center: { lat: lat4, lng: lon4 },
+                    zoom: 12,
+                });
+                // markör för användaren
+                let pos = new google.maps.Marker({
+                    position: { lat: lat4, lng: lon4 },
+                    map: map,
+                    label: "din position"
+                });
+                let desti = new google.maps.Marker({
+                    position: { lat: lat3, lng: lan3 },
+                    map: map,
+                    label: "din destination"
+                });
+                let directionsService = new google.maps.DirectionsService(); // objektet skickar behäran till Maps Directions api för vägbeskrivning
+                let directionsRenderer = new google.maps.DirectionsRenderer();// objektet visar vägbeskrivning som begäras med objektet directionsService 
+                directionsRenderer.setMap(map);
+                // vägbeskrivning bägran mellan två punkter 
+                let diReq = {
+                    origin: { lat: lat4, lng: lon4 },
+                    destination: { lat: lat3, lng: lan3 },
+                    travelMode: google.maps.TravelMode.WALKING
+                };
+                directionsService.route(diReq, function (response, status) {
+                    if (status === google.maps.DirectionsStatus.OK) {
+                        directionsRenderer.setDirections(response);
+                    }
+                    else {
+                        console.log("Directions begäran misslyckades. Status: " + status);
+                    }
+                });
+            } // slut mapFunc
+            // funktion för att hämta recensioner
+            function revFunc(obid, holder) {
+                holder.innerHTML = "Vänta en stund.."
+                let ID = obid.id; // restaurangens id 
+                let request = new XMLHttpRequest(); // object för Ajax-anropet
+                request.open("GET", "https://smapi.lnu.se/api/?api_key=" + smapiKey + "&debug=false&controller=establishment&method=getreviews&id=" + ID, true);
+                request.send(null);
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            let revResponse = request.responseText; // response från begäran
+                            let rev = JSON.parse(revResponse).payload; // parsa responsen för att lopa genom den som en arey
+                            if (rev.length === 0) {
+                                holder.innerHTML = "";
+                                let emptyElem = document.createElement("p"); // skapar ett tomt element
+                                let emptyTxt = document.createTextNode("Inga recensioner"); // text i fall recensioner inte finns
+                                emptyElem.appendChild(emptyTxt);
+                                holder.appendChild(emptyElem);
+                            }
+                            else {
+                                holder.innerHTML = "";
+                                for (let i = 0; i < rev.length; i++) {
+                                    let revNm = document.createTextNode(rev[i].name + ":"); // namn på personer som skriver recensioner
+                                    let revCmnt = document.createTextNode(rev[i].comment); // recensionerna 
+                                    let revNmElem = document.createElement("p"); // element för namnen
+                                   revNmElem.style.fontWeight ="410";
+                                    let revcmntElem = document.createElement("p"); // element för recensionerna
+                                    revNmElem.appendChild(revNm);
+                                    revcmntElem.appendChild(revCmnt);
+                                    holder.appendChild(revNmElem);
+                                    holder.appendChild(revcmntElem);
+                                }
+                            }
+                            let colseRev = document.createElement("button");// knapp för att stänga den delen där recensioner visades
+                            let colseRevTxt = document.createTextNode("Stäng"); // text i knappen
+                            colseRev.appendChild(colseRevTxt);
+                            colseRev.style.fontSize = "16px";
+                            colseRev.style.width = "85px";
+                            colseRev.style.height = "32px";                      
+                            colseRev.style.margin = "5px";     
+                            holder.appendChild(colseRev);
+                            colseRev.addEventListener("click", function () { endRev(holder); });
+                        }
+                    }
+                }
+            } // funktion för att stänga recensioner
+            function endRev(holder) {
+                holder.innerHTML = "";
+            }// slut endRev 
+        });
+
+    </script>
+
+    <!--
+    <script>
+        generateContent(); 
+      </script>
+  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_QOr-9xpFP20LOKdLzIMe97-qI7MgLMY"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
